@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To-do list</title>
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>To-Do List</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-wraper">
+                <div class="task-wrapper">
+                    <textarea
+                        class="quest-container"
+                        placeholder="enter task"
+                    ></textarea>
+                </div>
+                <div class="button-wrapper">
+                    <button class="doneAll">All done</button>
+                    <button class="clearQuest">Clear</button>
+                    <button class="addQuest">Add</button>
+                    <button class="deleteAll">Delete all</button>
+                </div>
+                <div class="task-wrapper">
+                    <h2 class="title">Enter first task</h2>
+                    <ul class="tasks">
+                        <li id="task_nID">
+                            <input type="checkbox" name="done" id="ckeck_1ID" />
+                            <span>_1_</span>
+                            <button id="btn_nID">delete</button>
+                        </li>
+                        <li id="n2">2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
