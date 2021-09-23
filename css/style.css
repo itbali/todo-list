@@ -10,6 +10,12 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+.container .header {
+  width: 90vw;
+  text-align: center;
+  border: 1px solid black;
+  margin: 5px 0;
+}
 .container .main-wraper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,9 +33,41 @@
   margin: 10px 0;
 }
 .container .main-wraper textarea.quest-container {
-  min-width: 350px;
-  min-height: 40px;
+  min-height: 80px;
+}
+.container .main-wraper .task-wrapper {
+  min-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
 }
 .container .main-wraper .task-wrapper .tasks {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .main-wraper .task-wrapper .tasks li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .main-wraper .task-wrapper .tasks li span {
+  max-width: 1000px;
+  overflow-wrap: anywhere;
 }
