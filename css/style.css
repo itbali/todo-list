@@ -71,3 +71,9 @@
   max-width: 1000px;
   overflow-wrap: anywhere;
 }
+.container .main-wraper .task-wrapper .tasks li input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+}
+.container .main-wraper .task-wrapper .tasks li input[type="checkbox"]:hover:not(:checked) + span {
+  text-decoration: underline;
+}

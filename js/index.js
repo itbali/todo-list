@@ -3,6 +3,7 @@ let taskList = document.querySelector(".tasks"); //select sakt list DOM
 let title = document.querySelector(".title"); //select title for changing it in future
 
 let taskNumber = 0;
+let allChecked = false;
 //buttons variables
 
 let doneAll = document.querySelector(".doneAll");
@@ -10,10 +11,10 @@ let clearQuest = document.querySelector(".clearQuest");
 let addQuest = document.querySelector(".addQuest");
 let deleteAll = document.querySelector(".deleteAll");
 
-let dels = document.querySelectorAll(".DeleteButton");
-//buttons listeners
-
+doneAll.addEventListener("click", onDoneAllClick);
 addQuest.addEventListener("click", onAddQuestClick);
+clearQuest.addEventListener("click", onClearQuestClick);
+deleteAll.addEventListener("click", onDeleteAllClick);
 
 function onAddQuestClick() {
     if (taskInpute.value == "") {
@@ -42,11 +43,42 @@ function newtask() {
 
     taskInpute.value = "";
     taskNumber++; //increasing next task number
+    title.innerText = "Task added";
+    newDelete.addEventListener("click", DeleteMe);
+
     return newLi;
 }
 
 //deleting curent task function
 
-function DeleteMe() {
-    dels.forEach();
+function DeleteMe(clickedButtonObject) {
+    let clickedButton = clickedButtonObject.currentTarget;
+    // console.log(clickedButton.parentElement);
+
+    clickedButton.parentElement.remove();
+    taskNumber--;
+}
+
+function onDoneAllClick() {
+    let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+    if (allChecked == false) {
+        allCheckboxes.forEach(
+            (currentElement) => (currentElement.checked = true)
+        );
+        allChecked = true;
+    } else {
+        allCheckboxes.forEach(
+            (currentElement) => (currentElement.checked = false)
+        );
+        allChecked = false;
+    }
+}
+
+function onClearQuestClick() {
+    taskInpute.value = "";
+}
+
+function onDeleteAllClick() {
+    let DeleteButtons = document.querySelectorAll(".DeleteButton");
+    DeleteButtons.forEach((CurrentButton) => CurrentButton.click());
 }

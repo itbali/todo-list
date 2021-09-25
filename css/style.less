@@ -37,6 +37,12 @@
                         max-width: 1000px;
                         overflow-wrap: anywhere;
                     }
+                    input[type="checkbox"]:checked + span {
+                        text-decoration: line-through;
+                    }
+                    input[type="checkbox"]:hover:not(:checked) + span {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
