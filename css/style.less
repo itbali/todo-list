@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "mult";
+    src: url(../font/Guestservice.ttf);
+}
+
 .container {
     margin: 0 auto;
     display: flex;
@@ -11,6 +16,7 @@
         padding: 10px;
         box-sizing: border-box;
         margin: 5px 0;
+        font-family: "mult";
     }
     .main-wraper {
         display: flex;
@@ -42,6 +48,13 @@
                 border-radius: 15px;
                 padding: 10px;
                 width: 15%;
+                transition: 150ms;
+                font-family: "mult";
+                &:hover {
+                    background-color: aquamarine;
+                    color: #4c2a71;
+                    transform: scale(1.05);
+                }
             }
         }
         .task-wrapper {
@@ -52,8 +65,15 @@
             justify-content: center;
             flex-direction: column;
             text-align: center;
+            .title {
+                font-family: "mult";
+                letter-spacing: 5px;
+            }
             hr {
                 width: 98%;
+                position: relative;
+                right: 0;
+                transition: 1s;
             }
             .tasks {
                 list-style: none;
@@ -68,7 +88,7 @@
                     position: relative;
                     right: 0;
                     transition: 1s;
-
+                    height: auto;
                     span {
                         max-width: 1000px;
                         overflow-wrap: anywhere;

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "mult";
+  src: url(../font/Guestservice.ttf);
+}
 .container {
   margin: 0 auto;
   display: -webkit-box;
@@ -19,6 +23,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 5px 0;
+  font-family: "mult";
 }
 .container .main-wraper {
   display: -webkit-box;
@@ -60,6 +65,15 @@
   border-radius: 15px;
   padding: 10px;
   width: 15%;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+  font-family: "mult";
+}
+.container .main-wraper .button-wrapper button:hover {
+  background-color: aquamarine;
+  color: #4c2a71;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .container .main-wraper .task-wrapper {
   border: 1px solid black;
@@ -77,8 +91,16 @@
           flex-direction: column;
   text-align: center;
 }
+.container .main-wraper .task-wrapper .title {
+  font-family: "mult";
+  letter-spacing: 5px;
+}
 .container .main-wraper .task-wrapper hr {
   width: 98%;
+  position: relative;
+  right: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 .container .main-wraper .task-wrapper .tasks {
   list-style: none;
@@ -106,6 +128,7 @@
   right: 0;
   -webkit-transition: 1s;
   transition: 1s;
+  height: auto;
 }
 .container .main-wraper .task-wrapper .tasks li span {
   max-width: 1000px;

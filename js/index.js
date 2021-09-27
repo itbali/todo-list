@@ -55,7 +55,10 @@ function newtask() {
 
 function DeleteMe(clickedButtonObject) {
     let clickedButton = clickedButtonObject.currentTarget;
-    clickedButton.parentElement.classList.add("deleted"); //addind delete animation
+
+    //add delete animation for curent object
+    clickedButton.parentElement.classList.add("deleted");
+    clickedButton.parentElement.nextSibling.classList.add("deleted");
 
     function pingDelete() {
         //removing task and line under it
