@@ -4,9 +4,12 @@
     align-items: center;
     justify-content: center;
     .header {
-        width: 90vw;
+        width: 60vw;
         text-align: center;
         border: 1px solid black;
+        border-radius: 15px;
+        padding: 10px;
+        box-sizing: border-box;
         margin: 5px 0;
     }
     .main-wraper {
@@ -17,22 +20,55 @@
         div {
             margin: 10px 0;
         }
-        textarea.quest-container {
-            min-height: 80px;
+
+        .quest-wrapper {
+            textarea.quest-container {
+                width: 60vw;
+                min-width: 500px;
+                min-height: 80px;
+                border: 1px solid black;
+                border-radius: 15px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+        }
+        .button-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            button {
+                background: azure;
+                border: 2px solid black;
+                border-radius: 15px;
+                padding: 10px;
+                width: 15%;
+            }
         }
         .task-wrapper {
-            min-width: 500px;
+            border: 1px solid black;
+            border-radius: 15px;
+            width: 60vw;
             display: flex;
             justify-content: center;
             flex-direction: column;
             text-align: center;
+            hr {
+                width: 98%;
+            }
             .tasks {
                 list-style: none;
                 display: flex;
                 flex-direction: column;
+                padding-left: 0;
                 li {
                     display: flex;
                     justify-content: space-between;
+                    padding: 5px 20px;
+                    align-items: flex-start;
+                    position: relative;
+                    right: 0;
+                    transition: 1s;
+
                     span {
                         max-width: 1000px;
                         overflow-wrap: anywhere;
@@ -47,4 +83,9 @@
             }
         }
     }
+}
+
+.deleted {
+    right: -80vw !important;
+    opacity: 0;
 }

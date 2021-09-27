@@ -21,6 +21,8 @@ function onAddQuestClick() {
         title.innerText = "Cannot wright empty task. Enter text please";
     } else {
         taskList.appendChild(newtask());
+        let NewHr = document.createElement("hr"); // creating horizontal line
+        taskList.appendChild(NewHr);
     }
 }
 
@@ -33,15 +35,15 @@ function newtask() {
     newChekBox.setAttribute("id", "checkNumber_" + taskNumber);
     let newSpan = document.createElement("span");
     newSpan.innerText = taskInpute.value; // extracting task value
-    let newDelete = document.createElement("button");
-    newDelete.setAttribute("id", "deleteTask_" + taskNumber);
-    newDelete.innerText = "Delete";
-    newDelete.setAttribute("class", "DeleteButton");
+    let newDelete = document.createElement("button"); // creating Delete Button
+    newDelete.setAttribute("id", "deleteTask_" + taskNumber); //setting id for del button
+    newDelete.innerText = "Delete"; //setting text for del button
+    newDelete.setAttribute("class", "DeleteButton"); //setting class for del button
     newLi.appendChild(newChekBox);
     newLi.appendChild(newSpan);
     newLi.appendChild(newDelete);
 
-    taskInpute.value = "";
+    taskInpute.value = ""; //clear input field
     taskNumber++; //increasing next task number
     title.innerText = "Task added";
     newDelete.addEventListener("click", DeleteMe);
@@ -53,10 +55,15 @@ function newtask() {
 
 function DeleteMe(clickedButtonObject) {
     let clickedButton = clickedButtonObject.currentTarget;
-    // console.log(clickedButton.parentElement);
+    clickedButton.parentElement.classList.add("deleted"); //addind delete animation
 
-    clickedButton.parentElement.remove();
-    taskNumber--;
+    function pingDelete() {
+        //removing task and line under it
+        clickedButton.parentElement.nextSibling.remove();
+        clickedButton.parentElement.remove();
+        taskNumber--;
+    }
+    setTimeout(pingDelete, 1000);
 }
 
 function onDoneAllClick() {

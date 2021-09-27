@@ -11,9 +11,13 @@
           justify-content: center;
 }
 .container .header {
-  width: 90vw;
+  width: 60vw;
   text-align: center;
   border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 5px 0;
 }
 .container .main-wraper {
@@ -32,11 +36,35 @@
 .container .main-wraper div {
   margin: 10px 0;
 }
-.container .main-wraper textarea.quest-container {
+.container .main-wraper .quest-wrapper textarea.quest-container {
+  width: 60vw;
+  min-width: 500px;
   min-height: 80px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .main-wraper .button-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.container .main-wraper .button-wrapper button {
+  background: azure;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  width: 15%;
 }
 .container .main-wraper .task-wrapper {
-  min-width: 500px;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,6 +77,9 @@
           flex-direction: column;
   text-align: center;
 }
+.container .main-wraper .task-wrapper hr {
+  width: 98%;
+}
 .container .main-wraper .task-wrapper .tasks {
   list-style: none;
   display: -webkit-box;
@@ -58,6 +89,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-left: 0;
 }
 .container .main-wraper .task-wrapper .tasks li {
   display: -webkit-box;
@@ -66,6 +98,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 5px 20px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  right: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 .container .main-wraper .task-wrapper .tasks li span {
   max-width: 1000px;
@@ -76,4 +116,8 @@
 }
 .container .main-wraper .task-wrapper .tasks li input[type="checkbox"]:hover:not(:checked) + span {
   text-decoration: underline;
+}
+.deleted {
+  right: -80vw !important;
+  opacity: 0;
 }
