@@ -18,11 +18,14 @@ deleteAll.addEventListener("click", onDeleteAllClick);
 
 function onAddQuestClick() {
     if (taskInpute.value == "") {
-        title.innerText = "Cannot wright empty task. Enter text please";
+        title.innerText = "Can't wright empty task. \n Enter text please";
     } else {
         taskList.appendChild(newtask());
         let NewHr = document.createElement("hr"); // creating horizontal line
-        taskList.appendChild(NewHr);
+        taskList.appendChild(NewHr); //adding horizontal rule under task
+        setTimeout(() => {
+            title.innerText = "Enter task";
+        }, 1000);
     }
 }
 
@@ -59,6 +62,7 @@ function DeleteMe(clickedButtonObject) {
     //add delete animation for curent object
     clickedButton.parentElement.classList.add("deleted");
     clickedButton.parentElement.nextSibling.classList.add("deleted");
+    title.innerText = "Task deleted";
 
     function pingDelete() {
         //removing task and line under it
@@ -67,6 +71,9 @@ function DeleteMe(clickedButtonObject) {
         taskNumber--;
     }
     setTimeout(pingDelete, 1000);
+    setTimeout(() => {
+        title.innerText = "Enter task";
+    }, 1000);
 }
 
 function onDoneAllClick() {
@@ -91,4 +98,5 @@ function onClearQuestClick() {
 function onDeleteAllClick() {
     let DeleteButtons = document.querySelectorAll(".DeleteButton");
     DeleteButtons.forEach((CurrentButton) => CurrentButton.click());
+    title.innerText = "All tasks deleted";
 }

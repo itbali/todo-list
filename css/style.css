@@ -2,6 +2,11 @@
   font-family: "mult";
   src: url(../font/Guestservice.ttf);
 }
+body {
+  background: url(../image/background.jpeg) 0 top fixed #e0d01359;
+  background-size: cover;
+  background-blend-mode: hue;
+}
 .container {
   margin: 0 auto;
   display: -webkit-box;
@@ -16,6 +21,7 @@
 }
 .container .header {
   width: 60vw;
+  font-size: 2.5vw;
   text-align: center;
   border: 1px solid black;
   border-radius: 15px;
@@ -24,6 +30,9 @@
           box-sizing: border-box;
   margin: 5px 0;
   font-family: "mult";
+  -webkit-backdrop-filter: blur(11px);
+          backdrop-filter: blur(11px);
+  background: #ffffff47;
 }
 .container .main-wraper {
   display: -webkit-box;
@@ -43,7 +52,8 @@
 }
 .container .main-wraper .quest-wrapper textarea.quest-container {
   width: 60vw;
-  min-width: 500px;
+  max-width: 60vw;
+  min-width: 300px;
   min-height: 80px;
   border: 1px solid black;
   border-radius: 15px;
@@ -60,7 +70,7 @@
       justify-content: space-around;
 }
 .container .main-wraper .button-wrapper button {
-  background: azure;
+  background: url(../image/button.png) center center;
   border: 2px solid black;
   border-radius: 15px;
   padding: 10px;
@@ -68,14 +78,20 @@
   -webkit-transition: 150ms;
   transition: 150ms;
   font-family: "mult";
+  color: maroon;
+  font-size: 1.1vw;
 }
 .container .main-wraper .button-wrapper button:hover {
-  background-color: aquamarine;
+  background-color: #fff27f;
+  background-blend-mode: multiply;
   color: #4c2a71;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 .container .main-wraper .task-wrapper {
+  -webkit-backdrop-filter: blur(11px);
+          backdrop-filter: blur(11px);
+  background: #ffffff47;
   border: 1px solid black;
   border-radius: 15px;
   width: 60vw;
@@ -94,6 +110,7 @@
 .container .main-wraper .task-wrapper .title {
   font-family: "mult";
   letter-spacing: 5px;
+  font-size: 1.75vw;
 }
 .container .main-wraper .task-wrapper hr {
   width: 98%;
@@ -133,6 +150,9 @@
 .container .main-wraper .task-wrapper .tasks li span {
   max-width: 1000px;
   overflow-wrap: anywhere;
+  color: #902222;
+  font-weight: 800;
+  font-size: 20px;
 }
 .container .main-wraper .task-wrapper .tasks li input[type="checkbox"]:checked + span {
   text-decoration: line-through;
@@ -140,7 +160,54 @@
 .container .main-wraper .task-wrapper .tasks li input[type="checkbox"]:hover:not(:checked) + span {
   text-decoration: underline;
 }
+.container .main-wraper .task-wrapper .tasks li .DeleteButton {
+  color: #843030;
+  font-weight: 800;
+  font-size: 20px;
+  background: url(../image/button.png) center;
+  border-radius: 8px;
+}
 .deleted {
   right: -80vw !important;
   opacity: 0;
+}
+@media (max-width: 575.98px) {
+  .container {
+    background-color: red;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    background-color: red;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    background-color: red;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container .header {
+    width: 80vw;
+  }
+  .container .header h1 {
+    font-size: 6vw;
+  }
+  .container .main-wraper .quest-wrapper textarea.quest-container {
+    width: 80vw;
+    max-width: 80vw;
+    font-size: 2vw;
+  }
+  .container .main-wraper .button-wrapper button {
+    font-size: 1.8vw;
+  }
+  .container .main-wraper .task-wrapper {
+    width: 80vw;
+  }
+  .container .main-wraper .task-wrapper .title {
+    font-size: 2.5vw;
+  }
+  .container .main-wraper .task-wrapper span {
+    font-size: 25px;
+  }
 }

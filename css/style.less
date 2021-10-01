@@ -3,6 +3,12 @@
     src: url(../font/Guestservice.ttf);
 }
 
+body {
+    background: url(../image/background.jpeg) 0 top fixed #e0d01359;
+    background-size: cover;
+    background-blend-mode: hue;
+}
+
 .container {
     margin: 0 auto;
     display: flex;
@@ -10,6 +16,7 @@
     justify-content: center;
     .header {
         width: 60vw;
+        font-size: 2.5vw;
         text-align: center;
         border: 1px solid black;
         border-radius: 15px;
@@ -17,6 +24,8 @@
         box-sizing: border-box;
         margin: 5px 0;
         font-family: "mult";
+        backdrop-filter: blur(11px);
+        background: #ffffff47;
     }
     .main-wraper {
         display: flex;
@@ -30,7 +39,8 @@
         .quest-wrapper {
             textarea.quest-container {
                 width: 60vw;
-                min-width: 500px;
+                max-width: 60vw;
+                min-width: 300px;
                 min-height: 80px;
                 border: 1px solid black;
                 border-radius: 15px;
@@ -43,21 +53,28 @@
             display: flex;
             justify-content: space-around;
             button {
-                background: azure;
+                background: url(../image/button.png) center center;
                 border: 2px solid black;
                 border-radius: 15px;
                 padding: 10px;
                 width: 15%;
                 transition: 150ms;
                 font-family: "mult";
+                color: maroon;
+                font-size: 1.1vw;
+
                 &:hover {
-                    background-color: aquamarine;
+                    background-color: rgb(255, 242, 127);
+                    background-blend-mode: multiply;
+                    // font-size: large;
                     color: #4c2a71;
                     transform: scale(1.05);
                 }
             }
         }
         .task-wrapper {
+            backdrop-filter: blur(11px);
+            background: #ffffff47;
             border: 1px solid black;
             border-radius: 15px;
             width: 60vw;
@@ -68,6 +85,7 @@
             .title {
                 font-family: "mult";
                 letter-spacing: 5px;
+                font-size: 1.75vw;
             }
             hr {
                 width: 98%;
@@ -92,12 +110,22 @@
                     span {
                         max-width: 1000px;
                         overflow-wrap: anywhere;
+                        color: #902222;
+                        font-weight: 800;
+                        font-size: 20px;
                     }
                     input[type="checkbox"]:checked + span {
                         text-decoration: line-through;
                     }
                     input[type="checkbox"]:hover:not(:checked) + span {
                         text-decoration: underline;
+                    }
+                    .DeleteButton {
+                        color: #843030;
+                        font-weight: 800;
+                        font-size: 20px;
+                        background: url(../image/button.png) center;
+                        border-radius: 8px;
                     }
                 }
             }
@@ -108,4 +136,60 @@
 .deleted {
     right: -80vw !important;
     opacity: 0;
+}
+
+//aadptive requests
+
+@media (max-width: 575.98px) {
+    .container {
+        background-color: red;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        background-color: red;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        background-color: red;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container .header {
+        width: 80vw;
+        h1 {
+            font-size: 6vw;
+        }
+    }
+    .container .main-wraper .quest-wrapper textarea.quest-container {
+        width: 80vw;
+        max-width: 80vw;
+        font-size: 2vw;
+    }
+    .container .main-wraper .button-wrapper button {
+        font-size: 1.8vw;
+    }
+
+    .container .main-wraper .task-wrapper {
+        width: 80vw;
+        .title {
+            font-size: 2.5vw;
+        }
+        span {
+            font-size: 25px;
+        }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .container .main-wraper .button-wrapper button {
+    }
 }
