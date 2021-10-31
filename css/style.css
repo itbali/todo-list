@@ -50,16 +50,49 @@ body {
 .container .main-wraper div {
   margin: 10px 0;
 }
-.container .main-wraper .quest-wrapper textarea.quest-container {
+.container .main-wraper .quest-wrapper {
   width: 60vw;
   max-width: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+}
+.container .main-wraper .quest-wrapper textarea.quest-container {
+  width: 100%;
   min-width: 300px;
   min-height: 80px;
-  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
   border-radius: 15px;
   padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  outline: none;
+}
+.container .main-wraper .quest-wrapper button {
+  background: url(../image/button.png) center center;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  margin-right: 10px;
+  width: 15%;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+  font-family: "mult";
+  color: maroon;
+  font-size: 1.1vw;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.container .main-wraper .quest-wrapper button:hover {
+  background-color: #fff27f;
+  background-blend-mode: multiply;
+  color: #4c2a71;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .container .main-wraper .button-wrapper {
   width: 100%;
@@ -129,6 +162,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-left: 0;
+  overflow: hidden;
 }
 .container .main-wraper .task-wrapper .tasks li {
   display: -webkit-box;
@@ -166,6 +200,13 @@ body {
   font-size: 20px;
   background: url(../image/button.png) center;
   border-radius: 8px;
+  position: relative;
+  right: -90px;
+}
+.container .main-wraper .task-wrapper .tasks li:hover .DeleteButton {
+  right: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .deleted {
   right: -80vw !important;
